@@ -41,14 +41,14 @@
 	{{{body}}}
 
 	<footer class="site-footer">
-		<ul class="nav" role="menu">
-			<li role="menuitem">
+		<ul class="social-bar">
+			<li class="social-bar-icon">
 				{{#if @blog.twitter}}
-				<a class="subscribe icon-twitter" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+				<a class="twitter tooltipable" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}<span class="tooltip">Twitter</span></a>
 				{{/if}}
 			</li>
-			<li ole="menuitem">
-				<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">RSS</span></a>
+			<li class="social-bar-icon">
+				<a class="subscribe icon-feed tooltipable" href="{{@blog.url}}/rss/"><span class="tooltip">RSS Subscribe</span></a>
 			</li>
 		</ul>
 		<div class="inner">
