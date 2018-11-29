@@ -55,8 +55,10 @@
    @import 'partials/5 Footer.css';
 
 /* ==========================================================================
-   6. General
+   6. Floating Header
    ========================================================================== */
+
+   @import 'partials/6 Floating Header.css';
 
 .site-main {
 	padding-bottom: constant(safe-area-inset-bottom);

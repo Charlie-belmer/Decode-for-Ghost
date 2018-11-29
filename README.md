@@ -1,4 +1,8 @@
 # Decode for Ghost
+
+## Changes in this fork for NullSweep
+This is a customized fork of Decode for [NullSweep](https://nullsweep.com) that makes only a few relatively minor cosmetic changes.
+
 #### [Download the latest release for Ghost here.](https://github.com/ScottSmith95/Decode-for-Ghost/releases/download/0.9.1/decode.zip)
 
 #### [Demo](https://decode-ghost-demo.scotthsmith.com)
