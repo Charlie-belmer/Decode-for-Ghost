@@ -41,8 +41,16 @@
 	{{{body}}}
 
 	<footer class="site-footer">
-		{{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-		<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">RSS</span></a>
+		<ul class="nav" role="menu">
+			<li role="menuitem">
+				{{#if @blog.twitter}}
+				<a class="subscribe icon-twitter" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+				{{/if}}
+			</li>
+			<li ole="menuitem">
+				<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">RSS</span></a>
+			</li>
+		</ul>
 		<div class="inner">
 			<section class="copyright">{{t "All content copyright"}} <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; {{t "All rights reserved."}}</section>
 		</div>
@@ -62,8 +70,17 @@
         })
     </script>
 
+	<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+
+	{{{block "scripts"}}}
+
 	{{! Ghost outputs important scripts and data with this tag }}
 	{{ghost_foot}}
+
 
 </body>
 </html>
