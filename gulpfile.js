@@ -4,11 +4,13 @@ const gulp       = require( 'gulp' );
 const postcss    = require( 'gulp-postcss' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 const zip 		 = require( 'gulp-zip' );
+const uglify 	 = require( 'gulp-uglify' );
 
 const paths = {
 	styles: {
 		src: [ 'assets/styles/*.css', '!assets/styles/variables.css' ],
-		dest: 'assets/styles/build/'
+		js: [ 'assets/js/**.js' ],
+		dest: 'assets/build/'
 	}
 };
 
@@ -34,6 +36,12 @@ function styles() {
 		.pipe( gulp.dest( paths.styles.dest ) );
 }
 
+function js() {
+	return gulp.src( paths.styles.js )
+		.pipe( uglify() )
+		.pipe( gulp.dest( paths.styles.dest ) );
+}
+
 function watch() {
 	gulp.watch( paths.styles.src, styles );
 }
@@ -53,10 +61,10 @@ function bundle() {
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-const defaultTask = gulp.parallel( styles, watch, bundle );
+const defaultTask = gulp.parallel( styles, watch, bundle, js );
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-const buildTask = gulp.parallel( styles );
+const buildTask = gulp.parallel( styles, js );
 
 const bundleTask = gulp.parallel( bundle );
 

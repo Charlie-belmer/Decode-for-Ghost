@@ -13,7 +13,8 @@
 	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
 	{{! Styles and Scripts }}
-	<link rel="stylesheet" type="text/css" href="{{asset "styles/build/style.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "build/style.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "build/prism.css"}}">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oxygen:400,700">
 	
 	{{! Prefetch next page and previous pages, if they exist }}
@@ -75,6 +76,7 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    <script type="text/javascript" src="{{asset "build/prism.js"}}"></script>
 
 	{{{block "scripts"}}}
 
