@@ -12,6 +12,10 @@
     <div class="floating-header-title">{{title}}</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this {{> "icons/point"}}</div>
+        <a class="floating-header-share-hn" href="https://news.ycombinator.com/submitlink?t={{encode title}}&amp;u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-hn', 'width=550,height=235');return false;">
+            {{> "icons/hn"}}
+        </a>
         <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             {{> "icons/twitter"}}
