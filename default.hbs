@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+	{{! Document Settings }}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+	{{! Styles and Scripts }}
+	<link rel="stylesheet" type="text/css" href="{{asset "build/style.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "build/prism.css"}}">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oxygen:400,700">
+	
+	{{! Prefetch next page and previous pages, if they exist }}
+	{{#if pagination.next}}<link href="{{page_url pagination.next}}" rel="prefetch">{{/if}}
+	{{#if pagination.prev}}<link href="{{page_url pagination.prev}}" rel="prefetch">{{/if}}
+
+	{{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}
+	{{#is "home, index, tag, author"}} fancy-header
+		{{#if @blog.cover_image}} blog-has-cover{{/if}}
+		{{#if @blog.logo}} blog-has-logo{{/if}}
+		{{#if primary_author.cover_image}} author-has-cover{{/if}}
+		{{#if primary_author.profile_image}} author-has-image{{/if}}
+	{{/is}}" 
+	{{#is "home, index, tag"}}
+		{{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}});"{{/if}}
+	{{/is}}
+	{{#is "author"}}
+		{{#if @blog.cover_image}}{{#if primary_author.cover_image}}style="background-image: url({{primary_author.cover_image}});"{{else}}style="background-image: url({{@blog.cover_image}});"{{/if}}{{/if}}
+	{{/is}}>
+	
+	{{! Everything else gets inserted here }}
+	{{{body}}}
+
+	<footer class="site-footer">
+		<ul class="social-bar">
+			<li class="social-bar-icon">
+				{{#if @blog.twitter}}
+				<a class="twitter tooltipable" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}<span class="tooltip">Twitter</span></a>
+				{{/if}}
+			</li>
+			<li class="social-bar-icon">
+				<a class="subscribe icon-feed tooltipable" href="{{@blog.url}}/rss/"><span class="tooltip">RSS Subscribe</span></a>
+			</li>
+		</ul>
+		<div class="inner">
+			<section class="copyright">{{t "All content copyright"}} <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; {{t "All rights reserved."}}</section>
+		</div>
+	</footer>
+
+</div> {{! end .site-main }}
+{{#if @blog.logo}}</div> {{! end .page-scroll }} {{/if}}
+	
+	<script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+	<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="{{asset "build/prism.js"}}"></script>
+
+	{{{block "scripts"}}}
+
+	<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="{{asset "build/prism.js"}}"></script>
+
+	{{{block "scripts"}}}
+
+	{{! Ghost outputs important scripts and data with this tag }}
+	{{ghost_foot}}
+
+
+</body>
+</html>
