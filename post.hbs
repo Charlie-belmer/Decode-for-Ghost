@@ -26,7 +26,7 @@
 			{{! Everything below outputs content of the the post which has been published }}
 
 			<header class="post-header">
-				{{#if post.feature_image}}<a href="{{url}}"><img class="post-image" src="{{post.feature_image}}"></a>{{/if}}
+				{{#if feature_image}}<a href="{{url}}"><img class="post-image" src="{{feature_image}}"></a>{{/if}}
 				<h1 class="post-title">{{title}}</h1>
 				<span class="post-meta">{{t "Posted on"}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMMM YYYY'}}</time></span>
 			</header>
