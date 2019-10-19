@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{lang}}">
+<html lang="{{site.lang}}">
 <head>
 	{{! Document Settings }}
 	<meta charset="utf-8" />
@@ -26,20 +26,20 @@
 </head>
 <body class='{{body_class}}
 	{{#is "home, index, tag, author"}} fancy-header
-		{{#if @blog.cover_image}} blog-has-cover{{/if}}
-		{{#if @blog.logo}} blog-has-logo{{/if}}
+		{{#if @site.cover_image}} blog-has-cover{{/if}}
+		{{#if @site.logo}} blog-has-logo{{/if}}
 		{{#if primary_author.cover_image}} author-has-cover{{/if}}
 		{{#if primary_author.profile_image}} author-has-image{{/if}}
-	'
-		{{#if author.cover_image}}style="background-image: url({{author.cover_image}});"{{else if @blog.cover_image}}style="background-image: url({{@blog.cover_image}});"{{/if}}
-	{{/is}}>
+	
+		{{#if primary_author.cover_image}}style="background-image: url({{primary_author.cover_image}});"{{else if @site.cover_image}}style="background-image: url({{@site.cover_image}});"{{/if}}
+	{{/is}}'>
 
 	<div class="site-main">
 
 		<header class="site-header">
-			{{#if @blog.logo}}<a href="{{@blog.url}}"><img class="blog-logo" src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-			{{#if @blog.title}}{{#is "home"}}<h1 class="blog-title">{{@blog.title}}</h1>{{else}}<div class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></div>{{/is}}{{/if}}
-			{{#if @blog.description}}<p class="blog-description">{{@blog.description}}</p>{{/if}}
+			{{#if @site.logo}}<a href="{{@site.url}}"><img class="blog-logo" src="{{@site.logo}}" alt="Blog Logo" /></a>{{/if}}
+			{{#if @site.title}}{{#is "home"}}<h1 class="blog-title">{{@site.title}}</h1>{{else}}<div class="blog-title"><a href="{{@site.url}}">{{@site.title}}</a></div>{{/is}}{{/if}}
+			{{#if @site.description}}<p class="blog-description">{{@site.description}}</p>{{/if}}
 
 			{{navigation}}
 		</header>
@@ -51,16 +51,16 @@
 	<footer class="site-footer">
 		<ul class="social-bar">
 			<li class="social-bar-icon">
-				{{#if @blog.twitter}}
-				<a class="twitter tooltipable" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}<span class="tooltip">Twitter</span></a>
+				{{#if @site.twitter}}
+				<a class="twitter tooltipable" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}<span class="tooltip">Twitter</span></a>
 				{{/if}}
 			</li>
 			<li class="social-bar-icon">
-				<a class="subscribe icon-feed tooltipable" href="{{@blog.url}}/rss/"><span class="tooltip">RSS Subscribe</span></a>
+				<a class="subscribe icon-feed tooltipable" href="{{@site.url}}/rss/"><span class="tooltip">RSS Subscribe</span></a>
 			</li>
 		</ul>
 		<div class="inner">
-			<section class="copyright">{{t "All content copyright"}} <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; {{t "All rights reserved."}}</section>
+			<section class="copyright">{{t "All content copyright"}} <a href="{{@site.url}}/">{{@site.title}}</a> &copy; {{date format="YYYY"}} &bull; {{t "All rights reserved."}}</section>
 		</div>
 	</footer>
 
@@ -69,8 +69,6 @@
 	{{#is "post, page"}}
 		<script async src='{{asset "scripts/build/main.js"}}'></script>
 	{{/is}}
-
-	{{{block "scripts"}}}
 
 	<script 
 		src="https://code.jquery.com/jquery-3.4.1.min.js" 
