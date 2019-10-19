@@ -26,9 +26,9 @@
 			{{! Everything below outputs content of the the post which has been published }}
 
 			<header class="post-header">
-				{{#if feature_image}}<a href="{{url}}"><img class="post-image" src="{{feature_image}}"></a>{{/if}}
 				<h1 class="post-title">{{title}}</h1>
 				<span class="post-meta">{{t "Posted on"}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMMM YYYY'}}</time></span>
+				{{#if feature_image}}<a href="{{url}}"><img class="post-image" src="{{feature_image}}"></a>{{/if}}
 			</header>
 
 			<section class="post-content">
@@ -56,6 +56,18 @@
 					<div class="post-tags">{{t "Tagged with"}}: {{tags separator=", "}}</div>
 				{{/if}}
 			</footer>
+			<section class="pre-comment">
+			<H2>Comments</H2>
+				<blockquote><em>
+					This comment system is self hosted using the <a href="https://coralproject.net/talk/">Mozilla Coral talk</a> platform, and not connected with any third parties who might collect data. At any time, you can completely delete all comments and data stored, including your email address. I will never send you emails aside from password reset emails you request.
+				</em></blockquote>
+			</section>
+			<div id="coral_talk_stream"></div>
+			<script src="https://comments.nullsweep.com/static/embed.js" async onload="
+			  Coral.Talk.render(document.getElementById('coral_talk_stream'), {
+			    talk: 'https://comments.nullsweep.com/'
+			  });
+			"></script>
 	</article>
 
 	<aside class="post-navigation cf">

@@ -236,3 +236,7 @@ table.plain {
 		background: transparent;
 	}
 }
+
+b, strong {
+	font-weight: bold;
+}

@@ -581,6 +581,11 @@ figure.kg-image-card {
 	float: left;
 }
 
+.pre-comment blockquote{
+	padding: .5em .25em .5em .75em;
+	background: #dbdee1;
+}
+
 /* ==========================================================================
    10. Media Queries. The secret sauce that makes Decode awesome
    ========================================================================== */
