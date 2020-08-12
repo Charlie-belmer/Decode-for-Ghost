@@ -5,7 +5,7 @@ This is a customized fork of Decode for [NullSweep](https://nullsweep.com) that 
 
 Want more social icons? Find SVG files here: [SuperTinyIcons](https://github.com/edent/SuperTinyIcons)
 
-#### [Download the latest release for Ghost here.](https://github.com/ScottSmith95/Decode-for-Ghost/releases/download/0.9.3/decode.zip)
+#### [Download the latest release for Ghost here.](https://github.com/ScottSmith95/Decode-for-Ghost/releases/download/0.9.4/decode.zip)
 
 #### [Demo](https://decode-ghost-demo.scotthsmith.com)
 

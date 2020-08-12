@@ -9,11 +9,12 @@
    3.	Utilities
    4.	Header
    5.	Footer
-   6.	General
-   7.	Single Post
-   8.	Navigation
-   9.	Pagination
-   10.	Media Queries
+   6.	Post Content
+   7.	General
+   8.	Single Post
+   9.	Navigation
+   10.	Pagination
+   11.	Media Queries
  */
 
 /* ==========================================================================
@@ -53,6 +54,12 @@
    ========================================================================== */
 
    @import 'partials/5 Footer.css';
+
+   /* ==========================================================================
+   6. Post Content - Styling for content of pages/posts
+   ========================================================================== */
+
+   @import 'partials/6 Content.css';
 
 /* ==========================================================================
    6. Floating Header
@@ -121,6 +128,15 @@
 .post-header {
 	text-align: center;
 	margin: 0 auto 2.5%;
+}
+
+.post-header-wrap {
+	height: 400px;
+}
+
+.post_hero_img {
+	opacity: 0.6;
+	background-color: #ffffff;
 }
 
 .post-image {
