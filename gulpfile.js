@@ -69,6 +69,7 @@ function bundle() {
     .src(
       [
         './*.hbs',
+        './package.json',
         './assets/build/**',
         './assets/fonts/**',
         './locales/**',
