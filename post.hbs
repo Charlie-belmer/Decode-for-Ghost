@@ -17,9 +17,19 @@
 			{{! Everything below outputs content of the the post which has been published }}
 
 			<header class="post-header">
-				<h1 class="post-title">{{title}}</h1>
-				<span class="post-meta">{{t "Posted on"}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMMM YYYY'}}</time></span>
+				<div class="post-header-wrap">
+					<div class="header-text">
+						<h1 class="post-title">{{title}}</h1>
+						<span class="post-meta">{{t "Posted on"}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMMM YYYY'}}</time></span>
+					</div>
+					{{#if feature_image}}
+					<div class="post_hero_img" style="background-image:url({{feature_image}}">
+					</div>
+					{{/if}}
+				</div>
+				<!--
 				{{#if feature_image}}<a href="{{url}}"><img class="post-image" src="{{feature_image}}"></a>{{/if}}
+				-->
 			</header>
 
 			<section class="post-content">

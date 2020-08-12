@@ -5,19 +5,18 @@ const postcss = require( 'gulp-postcss' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 // Use terser minifier with gulp-uglify for ES2015 support.
 const composer   = require( 'gulp-uglify/composer' );
-const terser     = require( 'terser' );
-const minify     = composer( terser, console );
+const terser    = require( 'gulp-terser-js' );
 const zip = require( 'gulp-zip' );
 
 const paths = {
   styles: {
     src: [ 'assets/styles/*.css', '!assets/styles/variables.css' ],
-    dest: 'assets/styles/build/',
+    dest: 'assets/build/styles',
     watch: [ 'assets/styles/**/*.css', '!assets/styles/build/**' ]
   },
   scripts: {
     src: 'assets/scripts/*.js',
-    dest: 'assets/scripts/build/',
+    dest: 'assets/build/scripts',
     watch: [ 'assets/scripts/**/*.css', '!assets/scripts/build/**' ]
   }
 };
@@ -51,7 +50,11 @@ function styles() {
 function scripts() {
 	return gulp.src( paths.scripts.src )
 		.pipe( sourcemaps.init() )
-			.pipe( minify() )
+			.pipe( terser({
+          mangle: {
+            toplevel: true
+          }
+      }) )
 		.pipe( sourcemaps.write( './' ) )
 		.pipe( gulp.dest( paths.scripts.dest ) );
 }
@@ -65,10 +68,10 @@ function bundle() {
   return gulp
     .src(
       [
-        './*',
-        './assets/**',
+        './*.hbs',
+        './assets/build/**',
+        './assets/fonts/**',
         './locales/**',
-        './partials/**',
         '!./.*',
         '!./node_modules',
         '!./distribution'
