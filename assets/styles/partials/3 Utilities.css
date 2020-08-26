@@ -30,3 +30,46 @@
 	display: table;
 	clear: both;
 }
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* Desktop only */
+@media only screen and (min-width: 50em) {
+	.leftcolumn {
+	width: 400px;
+}
+}
+
+/* mobile */
+@media (max-width:50em) {
+  .page-row {
+    flex-direction: column;
+  }
+
+  .leftcolumn {
+	width: 100%;
+	}
+} 
+
+
+
+.leftcolumn h2{
+	text-align: left;	
+}
+
+.grouped-list-item {
+	margin: 10px;
+}
+
+.with-bottom-border {
+	border-bottom: 1px solid var(--accent-color);
+}

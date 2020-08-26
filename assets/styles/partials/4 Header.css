@@ -65,9 +65,16 @@
 .site-header {
 	width: 100%;
 	text-align: center;
-	padding-bottom: 1.5%;
-	border-bottom: 1px solid var(--accent-color);
-	margin: 2.5% auto 3.5%;
+	margin: 1.5% auto .5%;
+	height: 200px;
+}
+
+.logo {
+	width: 100%;
+}
+
+.logo-row {
+	position: absolute;
 }
 
 	.author-template {
@@ -111,6 +118,11 @@
 	border-bottom: 1px solid var(--accent-color);
 }
 
+.site-hero {
+	background: rgba(220, 211, 156, 1);
+	height: 400px;
+}
+
 @media only screen and (min-width: 35em) {
 	.fancy-header.blog-has-cover.blog-has-logo {
 		.blog-logo {
@@ -151,8 +163,8 @@
 
 @media only screen and (min-width: 68.5em) {
 	.site-header {
-		width: 60%;
-		max-width: 60rem;
+		width: 70%;
+		max-width: 90rem;
 	}
 	
 	.blog-cover {

@@ -15,7 +15,7 @@ const paths = {
     watch: [ 'assets/styles/**/*.css', '!assets/styles/build/**' ]
   },
   scripts: {
-    src: 'assets/scripts/*.js',
+    src: 'assets/js/*.js',
     dest: 'assets/build/scripts',
     watch: [ 'assets/scripts/**/*.css', '!assets/scripts/build/**' ]
   }
@@ -70,9 +70,12 @@ function bundle() {
       [
         './*.hbs',
         './package.json',
+        './partials/**',
         './assets/build/**',
         './assets/fonts/**',
+        './vendor/**',
         './locales/**',
+        './assets/images/**',
         '!./.*',
         '!./node_modules',
         '!./distribution'

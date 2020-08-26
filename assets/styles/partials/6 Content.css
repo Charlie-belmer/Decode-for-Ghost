@@ -51,6 +51,27 @@
 	margin-right: 0.25em;
 }
 
+.post-header-text {
+	width: 50%;
+	text-align: left;
+	padding-top: 100px;
+	padding-left: 50px;
+}
+
+/* Non-mobile - larger header text*/
+@media (min-width:50em) {
+	.post-header-text h1 {
+		font-size: 4em;
+	}
+}
+
+/* Mobile - smaller header text*/
+@media (max-width:50em) {
+	.post-header-text h1 {
+		font-size: 2em;
+	}
+} 
+
 figure.kg-embed-card {
 	margin: 0.5rem auto;
 	
@@ -186,3 +207,80 @@ figure.kg-gallery-card {
     content: "•";
     margin: 0 0.5rem;
 }
+
+.newsletter {
+	background-color: #b8bad6;
+}
+
+.newsletter h3 {
+	color: #323151;
+}
+
+.newsletter hr {
+	margin: 0px;
+	color: #323151;
+}
+
+.newsletter-footer {
+	padding: 16px;
+	margin: 10px auto;	
+	border-radius: 8px;
+}
+
+#mc-embedded-subscribe {
+	background: linear-gradient(#aed452,#8fb925);
+	padding: 0 20px;
+	height: 43px;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: .2px;
+	border-radius: 4px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #fff;
+	margin-top: 15px;
+}
+
+#mce-EMAIL {
+	padding: 14px 0px;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.email input[type="text"] {
+	padding-left: 14px;
+}
+
+/* Sidebar - Desktop only */
+@media only screen and (min-width: 50em) {
+	.sidebar {
+		display: flex;
+		padding-left: 3%;
+		padding-right: 1%;
+	}
+
+	.post-wrapper {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.post-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.newsletter-box {
+		width: 256px;
+		padding: 16px;
+		margin-top: -100px;
+		border-radius: 8px;
+		height: 330px;
+	}
+}
+
+/* Remove on mobile */
+@media (max-width:50em) {
+  .sidebar {
+    display: none;
+  }
+} 

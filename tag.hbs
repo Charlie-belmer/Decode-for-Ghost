@@ -3,43 +3,44 @@
 {{#if @site.blog.cover_image}}
 	<div class="page-scroll">
 {{/if}}
-	{{#if @site.logo}}
-		<a href="{{@site.url}}"><img class="header-logo blog-logo" src="{{@site.logo}}" alt="Blog Logo"></a>
-	{{/if}}
 <div class="site-main">
-
-<header class="site-header">
-	<!--{{#if @site.title}}<h1 class="blog-title"><a href="{{@site.url}}">{{@site.title}}</a></h1>{{/if}}-->
-	{{#if @site.description}}<h2 class="blog-description">{{@site.description}}</h2>{{/if}}
-	
-	{{navigation}}
-</header>
 
 {{! The main content area on the homepage }}
 <main class="site-content" role="main">
 
-	<header class="tag-archive-header">
-		<h1>{{tag.name}}</h1>
+	<header class="site-hero">
+		<div class="post-header-wrap">
+			<div class="post-header-text">
+				<h1>{{tag.name}}</h1>
+				<p> {{tag.description}} </p>
+				
+			</div>
+			
+		</div>
 	</header>
+
 
 	{{! Each post will be output using this markup }}
 	{{#foreach posts}}
 
-	<article class="{{post_class}}">
-		<header class="post-header">
-			{{#if feature_image}}<a href="{{url}}"><img class="post-image" src="{{feature_image}}"></a>{{/if}}
-			<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-			<a class="post-meta" href="{{url}}">{{t "Posted on"}} <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></a>
-		</header>
-		
-		<section class="post-excerpt">
-			<p>{{excerpt}}<a href="{{url}}" class="excerpt-suffix">&hellip;</a></p>
-		</section>
-		
-		<footer class="post-footer">
-			<div class="post-tags">{{t "Tagged with"}}: {{tags separator=", "}}</div>
-		</footer> 
-	</article>
+		<article class="row grouped-list-item with-bottom-border page-row">
+			<header class="column leftcolumn nomargin">
+				{{#if feature_image}}<a href="{{url}}"><img class="post-image-list" src="{{feature_image}}"></a>{{/if}}
+				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+				<a class="post-meta nomargin" href="{{url}}">{{t "Posted on"}} <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></a>
+			</header>
+			
+			<div class="column">
+				<section class="post-excerpt">
+					<p>{{meta_description}}<a href="{{url}}" class="excerpt-suffix"></a></p>
+				</section>
+				<!--
+				<footer class="post-footer">
+					<div class="post-tags">{{t "Tagged with"}}: {{tags separator=", "}}</div>
+				</footer> 
+				-->
+			</div>
+		</article>
 
 	{{/foreach}}
 
