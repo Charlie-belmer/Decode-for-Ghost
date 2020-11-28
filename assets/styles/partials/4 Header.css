@@ -156,6 +156,8 @@
 	background: black;
 	width: 100%;
 	color: white;
+	display: block;
+	min-height: 75px;
 }
 
 .newlsetter-form {

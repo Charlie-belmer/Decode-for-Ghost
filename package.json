@@ -1,6 +1,6 @@
 {
 	"name": "nullsweep-decode",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A minimal, modern Ghost blog theme, based on Decode for Ghost.",
 	"keywords": [
 		"ghost",
@@ -23,8 +23,8 @@
 			"Personal Blogs"
 		]
 	},
-	"demo": "https://decode-ghost-demo.scotthsmith.com/",
-	"homepage": "https://scotthsmith.com/miscellanea/decode-archive/",
+	"demo": "https://nullsweep.com/",
+	"homepage": "https://nullsweep.com/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ScottSmith95/Decode-for-Ghost.git"
