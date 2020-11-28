@@ -1,20 +1,29 @@
 {{! Each post will be output using this markup }}
 {{#foreach posts}}
-
-<article class="{{post_class}}">
-	<header class="post-header">
-		<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-		<a class="post-meta" href="{{url}}">{{t "Posted on"}} <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></a>
-	</header>
-	
-	<section class="post-excerpt">
-		<p>{{excerpt}}<a href="{{url}}" class="excerpt-suffix">&hellip;</a></p>
-	</section>
-	<!--
-	<footer class="post-footer">
-		<div class="post-tags">{{t "Tagged with"}}: {{tags separator=", "}}</div>
-	</footer>
-	--> 
+<article class="row grouped-list-item post-list-box page-row">
+	<div class="column">
+		<h2 class="post-title row"><a href="{{url}}">{{title}}</a></h2>
+		<a class="post-meta nomargin row" href="{{url}}"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></a>
+		<div class = "convertible-row">
+			<div class="column">
+				{{#if feature_image}}
+					<a href="{{url}}"><img class="post-image-list" src="{{feature_image}}"></a>
+				{{/if}}
+			</div>
+		
+			<div class="column">
+				<section class="post-excerpt">
+					<p>{{meta_description}}<a href="{{url}}" class="excerpt-suffix"></a></p>
+				</section>
+				<a class="button post-button" href="{{url}}"> Read More </a>
+				<!--
+				<footer class="post-footer">
+					<div class="post-tags">{{t "Tagged with"}}: {{tags separator=", "}}</div>
+				</footer> 
+				-->
+			</div>
+		</div>
+	</div>
 </article>
 
 {{/foreach}}

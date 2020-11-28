@@ -112,7 +112,7 @@
 	
 	.post-excerpt,
 	.post-content {
-		width: 75%;
+		width: 100%;
 		margin: 0 auto;
 	}
 	
@@ -130,10 +130,9 @@
 }
 
 .post-header-wrap {
-	min-height: 500px;
 	display: flex;
 	flex-wrap: wrap;
-	padding-bottom: 100px;
+	align-items: flex-start;
 	width: 100%;
 	position: relative;
 }
@@ -145,7 +144,7 @@
     z-index: 2;
 }
 
-.post_hero_img {
+.post_hero_img_bgs {
 	opacity: 0.8;
 	width: 100%;
 	top: 0;
@@ -162,16 +161,21 @@
 .post-image-list {
 	max-width: 300px;
 	max-height: 300px;
+	margin-left: 10px;
 }
 
 .post-title {
 	font-size: 1.65em;
 	font-weight: normal;
 	margin: 0;
+	color: #395fb1;
+	font-weight: bold;
 }
 
 .post-title a {
 	text-decoration: none;
+	color: #395fb1;
+	font-weight: bold;
 }
 
 /* Make sure nothing jumps outside the post. */
@@ -496,8 +500,8 @@ figure.kg-gallery-card {
 	color: var(--secondary-text-color);
 	text-decoration: none;
 	padding: 0 2.5% 1%;
-	border-bottom: 1px solid var(--accent-color);
-	margin: 1.5% auto;
+	/*border-bottom: 1px solid var(--accent-color);*/
+	margin: 1.5%;
 }
 
 .orange-highlight {
@@ -628,6 +632,7 @@ figure.kg-gallery-card {
 
 .nav-container {
 	width: 100%;
+	margin: auto 0px;
 }
 
 .nav-container label, #hamburger { 
@@ -636,6 +641,11 @@ figure.kg-gallery-card {
 
 /** Mobile menu (hamburger) **/
 @media screen and (max-width: 768px){
+	.nav-container {
+	    z-index: 100;
+	    text-align: right;
+	    margin: 0;
+  }
   /* Show Hamburger Icon */
   .nav-container label { 
     display: inline-block; 
@@ -646,11 +656,13 @@ figure.kg-gallery-card {
     padding: 10px;
   }
 
-  .nav-container {
-  	position: absolute;
-    top: 150px;
-    z-index: 100;
-    text-align: left;
+
+  .nav {
+  	text-align: right;
+  }
+
+  .nav li {
+  	margin: 0;
   }
 
   /* Break down menu items into vertical */
@@ -661,13 +673,9 @@ figure.kg-gallery-card {
     border-top: 1px solid #333;
   }
 
-  .nav li {
-  	margin: 0;
-  }
 
-  .nav {
-  	text-align: left;
-  }
+
+
 
   /* Toggle Show/Hide Menu */
   .nav-items { display: none; }
@@ -678,20 +686,20 @@ figure.kg-gallery-card {
 .nav {
 	width: 100%;	
 	font-size: 1.1em;
-	text-align: center;
+	text-align: right;
 	clear: both;
 	list-style: none;
 	padding-left: 0;
-	margin: auto auto 1%;
+	margin: auto auto 50px;
 	font-weight: bold;
 	
 	li {
 		display: inline;
-		margin: 0 0.25em;
+		margin: 0 0.5em;
 	}
 	
 	a {
-		color: var(--button-orange);
+		color: var(--nav-link);
 		
 		&:hover {
 			color: var(--accent-color);
@@ -699,12 +707,12 @@ figure.kg-gallery-card {
 		
 		&:active,
 		&:focus {
-			color: var(--secondary-accent-color);
+			/*color: var(--secondary-accent-color);*/
 		}
 	}
 	
 	.nav-current a {
-		color: var(--accent-color);
+	/*	color: var(--accent-color);*/
 		
 		&:hover {
 			animation: shake 0.3s ease 0.25s;
@@ -834,6 +842,12 @@ figure.kg-gallery-card {
 /* ==========================================================================
    10. Media Queries. The secret sauce that makes Decode awesome
    ========================================================================== */
+@media only screen and (max-width: 35em) {
+	.post {
+		width: 90%;
+	}
+}
+
 
 /* Tablets
 --------------------------------------- */
@@ -843,7 +857,7 @@ figure.kg-gallery-card {
 	}
 
 	.post {
-		width: 100%;
+		width: 90%;
 	}
 
 	.post-footer,

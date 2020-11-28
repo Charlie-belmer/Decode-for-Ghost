@@ -8,43 +8,10 @@
 {{! The main content area on the homepage }}
 <main class="site-content" role="main">
 
-	<header class="site-hero">
-		<div class="post-header-wrap">
-			<div class="post-header-text">
-				<h1>{{tag.name}}</h1>
-				<p> {{tag.description}} </p>
-				
-			</div>
-			
-		</div>
-	</header>
+	<h1>{{tag.name}}</h1>
+	<p> {{tag.description}} </p>
 
 
-	{{! Each post will be output using this markup }}
-	{{#foreach posts}}
-
-		<article class="row grouped-list-item with-bottom-border page-row">
-			<header class="column leftcolumn nomargin">
-				{{#if feature_image}}<a href="{{url}}"><img class="post-image-list" src="{{feature_image}}"></a>{{/if}}
-				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-				<a class="post-meta nomargin" href="{{url}}">{{t "Posted on"}} <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></a>
-			</header>
-			
-			<div class="column">
-				<section class="post-excerpt">
-					<p>{{meta_description}}<a href="{{url}}" class="excerpt-suffix"></a></p>
-				</section>
-				<!--
-				<footer class="post-footer">
-					<div class="post-tags">{{t "Tagged with"}}: {{tags separator=", "}}</div>
-				</footer> 
-				-->
-			</div>
-		</article>
-
-	{{/foreach}}
-
-	{{!! After all the posts, we have the previous/next pagination links }}
-	{{pagination}}
+	{{> "loop"}}
 
 </main>
