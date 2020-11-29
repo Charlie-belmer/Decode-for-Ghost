@@ -152,6 +152,7 @@
 	bottom: 0;
 	left: 0;
 	position: absolute;
+	background-size: cover;
 }
 
 .post-image {
